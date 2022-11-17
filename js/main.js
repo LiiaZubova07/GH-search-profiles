@@ -14,3 +14,14 @@
 
 const mainEl = document.querySelector('.main');
 
+const formEl = document.createElement('form');
+const inputEl = document.createElement('input');
+const searchButtonEl = document.createElement('button');
+
+//добавить инпут и кнопку к форме
+formEl.appendChild(inputEl);
+formEl.appendChild(searchButtonEl);
+//добавить форму к main
+mainEl.appendChild(formEl);
+
+
