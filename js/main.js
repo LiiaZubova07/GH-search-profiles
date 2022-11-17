@@ -20,7 +20,9 @@ formEl.addEventListener('submit', (e) => {
 	//сбросить стандартное поведение в браузере
 e.preventDefault();
 
-
+//забираю значение из этого ипута, которое буду вводить
+//позволяет забрать неограниченное количество значений из формы
+const inputsValue = Object.fromEntries(new FormData(e.target));
 });
 
 const inputEl = document.createElement('input');

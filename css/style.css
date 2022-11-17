@@ -114,23 +114,26 @@ h1 {
 }
 
 .search {
-
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 .search-input {
-border: 2px solid black;
+	border: 2px solid rgb(24, 18, 18);
 border-radius: 5px;
 width: 200px;
 height: 30px;
 }
 
 .search-button {
-width: auto;
+width: 70px;
 margin: 10px;
 height: 30px;
 background-color: blueviolet;
 border-radius: 5px;
 color: white;
-font-size: 15px;
-padding: 5px;
+font-size: 16px;
+border: 2px solid rgb(24, 18, 18);
+
 }
