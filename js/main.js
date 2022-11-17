@@ -24,10 +24,16 @@ formEl.addEventListener('submit', async (e) => {
   //позволяет забрать неограниченное количество значений из формы
   const inputsValue = Object.fromEntries(new FormData(e.target));
   //сетевой запрос
-  const response = await fetch(`https://api.github.com/users/${inputsValue.name}`);
- if(response.ok) {
-  const data = await response.json();
- }
+  const response = await fetch(
+    `https://api.github.com/users/${inputsValue.name}`
+  );
+  if (response.ok) {
+    const data = await response.json();
+    //использовать функцию для создания карточки
+    //добавить результат функции выше в mainEl
+  } else {
+    alert('Пользователь не найден');
+  }
   console.log(response);
 });
 
@@ -47,3 +53,14 @@ formEl.appendChild(inputEl);
 formEl.appendChild(searchButtonEl);
 //добавить форму к main
 mainEl.appendChild(formEl);
+
+function createProfileEl(profileData) {
+  const element = document.createElement('div');
+  element.classList.add('profile');
+  element.innerHTML = `<img src="${profileData.avatar_url}" alt="avatar" class="search-image">
+	<p class="search-text"><span>Name: </span>${profileData.name}</p>
+	<p class="search-text"><span>City: </span>${profileData.location}</p>
+	<p class="search-text"><span>About me: </span>${profileData.bio}</p>`;
+}
+
+function createBtnEl() {}
