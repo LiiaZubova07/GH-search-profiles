@@ -92,4 +92,18 @@ h6 {
 
 body {
 	font-family: 'Open Sans', sans-serif;
+	background-color: #f1f5f8;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
 }
