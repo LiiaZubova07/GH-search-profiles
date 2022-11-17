@@ -13,6 +13,7 @@
 //----------------------------------------------//
 
 const mainEl = document.querySelector('.main');
+const wrapper = document.createElement('div');
 
 const formEl = document.createElement('form');
 formEl.classList.add('search');
@@ -29,7 +30,9 @@ formEl.addEventListener('submit', async (e) => {
   );
   if (response.ok) {
     const data = await response.json();
-    //использовать функцию для создания карточки
+	 wrapper.appendChild(createProfileEl(data));
+	 mainEl.appendChild(wrapper);
+    //wrapper // использовать функцию для создания карточки
     //добавить результат функции выше в mainEl
   } else {
     alert('Пользователь не найден');
@@ -61,6 +64,18 @@ function createProfileEl(profileData) {
 	<p class="search-text"><span>Name: </span>${profileData.name}</p>
 	<p class="search-text"><span>City: </span>${profileData.location}</p>
 	<p class="search-text"><span>About me: </span>${profileData.bio}</p>`;
+
+	element.appendChild(createDeleteBtnEl());
+	return element;
 }
 
-function createBtnEl() {}
+function createDeleteBtnEl() {
+	const element= document.createElement('button');
+	element.classList.add('delete-button');
+	element.innerText = 'Delete';
+	element.addEventListener('click', (e) => {
+wrapper.innerHTML = '';
+	});
+
+	return element;
+}
