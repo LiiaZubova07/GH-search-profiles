@@ -30,14 +30,14 @@ formEl.addEventListener('submit', async (e) => {
   );
   if (response.ok) {
     const data = await response.json();
-	 wrapper.appendChild(createProfileEl(data));
-	 mainEl.appendChild(wrapper);
+    wrapper.appendChild(createProfileEl(data));
+    mainEl.appendChild(wrapper);
+    inputEl.value = '';
     //wrapper // использовать функцию для создания карточки
     //добавить результат функции выше в mainEl
   } else {
     alert('Пользователь не найден');
   }
-  console.log(response);
 });
 
 const inputEl = document.createElement('input');
@@ -65,17 +65,17 @@ function createProfileEl(profileData) {
 	<p class="search-text"><span>City: </span>${profileData.location}</p>
 	<p class="search-text"><span>About me: </span>${profileData.bio}</p>`;
 
-	element.appendChild(createDeleteBtnEl());
-	return element;
+  element.appendChild(createDeleteBtnEl());
+  return element;
 }
 
 function createDeleteBtnEl() {
-	const element= document.createElement('button');
-	element.classList.add('delete-button');
-	element.innerText = 'Delete';
-	element.addEventListener('click', (e) => {
-wrapper.innerHTML = '';
-	});
+  const element = document.createElement('button');
+  element.classList.add('delete-button');
+  element.innerText = 'Delete';
+  element.addEventListener('click', (e) => {
+    wrapper.innerHTML = '';
+  });
 
-	return element;
+  return element;
 }

@@ -109,40 +109,77 @@ body {
 }
 
 h1 {
-	font-size: 30px;
+	font-size: 40px;
 	margin: 20px;
 }
 
 .search {
-display: flex;
-justify-content: center;
-align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 }
 
 .search-input {
 	border: 2px solid rgb(24, 18, 18);
-border-radius: 5px;
-width: 200px;
-height: 30px;
-padding: 10px;
+	border-radius: 5px;
+	width: 200px;
+	height: 30px;
+	padding: 10px;
+	font-size: 15px;
+	font-weight: bold;
 }
 
 .search-button {
-width: 70px;
-margin: 10px;
-height: 30px;
-background-color: blueviolet;
-border-radius: 5px;
-color: white;
-font-size: 16px;
-border: 2px solid rgb(24, 18, 18);
+	width: 70px;
+	margin: 10px;
+	height: 30px;
+	background-color: blueviolet;
+	border-radius: 5px;
+	color: white;
+	font-size: 15px;
+	border: 2px solid rgb(24, 18, 18);
+}
+
+.profile {
+	border: 1px solid white;
+	border-radius: 20px;
+	padding: 20px;
+	background-color: white;
+	width: 300px;
+	box-shadow: 8px 8px 10px 1px rgb(244, 208, 253);
 }
 
 .search-image {
+	width: 200px;
+	height: 200px;
+	display: block;
+	margin: 0 auto;
+	border-radius: 5px
 }
+
 .search-text {
+	font-size: 15px;
+	padding: 3px;
+	margin: 10px;
+	letter-spacing: 0.2px;
+}
+
+span {
+	font-size: 15px;
+	font-weight: bold;
 }
 
 .delete-button {
-	
+	padding: 8px;
+	background-color: rgb(235, 66, 66);
+	border: 2px solid black;
+	border-radius: 5px;
+	margin: 5px auto;
+	color: white;
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+	width: 70px;
+	height: 30px;
 }
